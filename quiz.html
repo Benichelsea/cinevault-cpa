@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Film — Uji Pengetahuan Cinephile Kamu | CineVault</title>
+  <meta name="description" content="Mainkan quiz trivia film 10 soal secara gratis dan dapatkan gelar cinephile-mu secara instan: Couch Potato, Movie Buff, sampai Cinephile Legend.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://cinevault.example/quiz.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Quiz Film — Uji Pengetahuan Cinephile Kamu">
+  <meta property="og:description" content="10 soal trivia film. Berani buktikan seberapa movie buff kamu?">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">Cine<span>Vault</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="quiz.html" class="active">Quiz</a></li>
+      <li><a href="movies.html">Movies</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="quiz.html" class="nav-cta">Main Quiz</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<main class="section">
+  <div class="container">
+    <div class="quiz-wrap">
+
+      <!-- LAYAR MULAI -->
+      <div id="startScreen" class="quiz-card">
+        <span class="eyebrow">Trivia Challenge</span>
+        <h1 style="font-size:clamp(1.6rem,4vw,2.4rem);margin:6px 0 12px">Seberapa Banyak Kamu Tahu Tentang Film?</h1>
+        <p style="color:var(--muted);margin-bottom:24px">10 pertanyaan pilihan ganda tentang sutradara, aktor, dan film ikonik. Jawaban benar menambah skormu. Siap?</p>
+        <a href="#" id="startBtn" class="btn btn-primary btn-lg btn-pulse">▶ Mulai Quiz Sekarang</a>
+        <p style="color:var(--muted);font-size:.85rem;margin-top:16px">Gratis · Tanpa daftar · Hasil instan</p>
+      </div>
+
+      <!-- LAYAR QUIZ -->
+      <div id="quizScreen" class="quiz-card hidden">
+        <div class="progress"><div id="bar" class="bar"></div></div>
+        <div id="qCount" class="q-count">Question 1 / 10</div>
+        <div id="qText" class="q-text">Memuat soal…</div>
+        <div id="opts" class="opts"></div>
+      </div>
+
+      <!-- LAYAR HASIL + GATE CPA -->
+      <div id="resultScreen" class="quiz-card quiz-result hidden">
+        <span class="eyebrow">Hasilmu</span>
+        <div class="score" id="finalScore">0/10</div>
+        <h2 style="margin:8px 0 4px">Gelar: <span id="finalRank">—</span></h2>
+        <p style="color:var(--muted)">Kerja bagus! Bagikan hasilmu dan tantang temanmu.</p>
+
+        <div class="share">
+          <button onclick="shareResult()">📤 Bagikan Hasil</button>
+          <button onclick="restartQuiz()">🔁 Main Lagi</button>
+        </div>
+
+        <!-- GATE / CTA KE OFFER CPA -->
+        <div class="gate">
+          <h3>🔓 Buka Laporan Lengkap Cinephile-mu</h3>
+          <p>Lihat analisis detail kekuatan genre-mu, rekomendasi film yang paling cocok untukmu, dan gelar rahasia yang hanya sedikit orang dapatkan.</p>
+          <a href="#" id="unlockBtn" data-offer class="btn btn-gold btn-lg btn-pulse">Unlock My Result</a>
+          <p style="font-size:.78rem;margin-top:12px;opacity:.8">Dengan mengklik, kamu akan diarahkan ke penawaran mitra kami.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- SEO CONTENT DI BAWAH QUIZ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">Tips Lolos Quiz</span>
+      <h2>Fakta Film yang Sering Keluar di Trivia</h2>
+      <p>Pelajari pola soal ini sebelum mengulang quiz untuk skor sempurna.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card"><h3>Sutradara Legendaris</h3><p>Hafalkan film karya Spielberg, Nolan, dan Ghibli — hampir selalu muncul di trivia.</p></div>
+      <div class="card"><h3>Aktor Ikonik</h3><p>Karakter utama besar seperti Iron Man, Jack Dawson, dan Terminator mudah dikenali.</p></div>
+      <div class="card"><h3>Box Office</h3><p>Avatar dan Avengers: Endgame adalah fakta box office yang wajib diketahui.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border:0;padding-top:0">
+      © 2026 CineVault · <a href="disclaimer.html">Disclaimer</a> · <a href="privacy.html">Privacy</a>
+      <div class="disc">Tautan afiliasi dapat menghasilkan komisi tanpa biaya tambahan untuk kamu.</div>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast">Tautan disalin!</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/quiz.js"></script>
+<script>
+  document.getElementById('burger').addEventListener('click',function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  function restartQuiz(){
+    document.getElementById('resultScreen').classList.add('hidden');
+    document.getElementById('startScreen').classList.remove('hidden');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function shareResult(){
+    const s=document.getElementById('finalScore').textContent;
+    const r=document.getElementById('finalRank').textContent;
+    const text='Aku dapat '+s+' ('+r+') di Quiz Film CineVault! Berani kalahkan aku?';
+    if(navigator.share){navigator.share({title:'Hasil Quiz Film',text:text,url:location.href}).catch(()=>{});}
+    else{
+      navigator.clipboard.writeText(text+' '+location.href).then(()=>{
+        const t=document.getElementById('toast');t.classList.add('show');
+        setTimeout(()=>t.classList.remove('show'),2000);
+      });
+    }
+  }
+</script>
+<style>.hidden{display:none!important}.active{color:#fff!important}</style>
+</body>
+</html>
