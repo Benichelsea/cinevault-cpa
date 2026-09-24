@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rekomendasi Film Terbaik 2026 — 12 Movie Wajib Tonton | CineVault</title>
-  <meta name="description" content="12 rekomendasi film terbaik untuk marathon akhir pekan: blockbuster, thriller, sampai drama keluarga. Lengkap dengan genre dan sinopsis singkat.">
+  <title>Top Recommended Movies 2026 — Must-Watch Films | CineVault</title>
+  <meta name="description" content="Discover top movie recommendations for your weekend marathon. Powered by TMDB API.">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://cinevault.example/movies.html">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="12 Rekomendasi Film Terbaik 2026">
-  <meta property="og:description" content="Daftar movie wajib tonton untuk marathon akhir pekan.">
+  <link rel="canonical" href="https://benichelsea.github.io/cinevault-cpa/movies.html">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -18,11 +15,11 @@
   <div class="container nav-inner">
     <a href="index.html" class="logo">Cine<span>Vault</span></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="quiz.html">Quiz</a></li>
-      <li><a href="movies.html" class="active">Movies</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="quiz.html" class="nav-cta">Main Quiz</a></li>
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="quiz.html" data-i18n="nav_quiz">Quiz</a></li>
+      <li><a href="movies.html" class="active" data-i18n="nav_movies">Movies</a></li>
+      <li><a href="about.html" data-i18n="nav_about">About</a></li>
+      <li><a href="quiz.html" class="nav-cta" data-i18n="nav_play">Play Quiz</a></li>
     </ul>
     <button class="burger" id="burger" aria-label="Menu">☰</button>
   </div>
@@ -30,79 +27,57 @@
 
 <header class="hero" style="padding-bottom:20px">
   <div class="container">
-    <span class="eyebrow">Rekomendasi</span>
-    <h1 style="font-size:clamp(1.8rem,4.5vw,3rem)">12 Film Wajib Tonton<br>untuk <em>Marathon</em> Akhir Pekan</h1>
-    <p style="margin-bottom:0">Dari blockbuster penuh aksi sampai drama yang menyentuh hati — pilih genre favoritmu dan mulai maraton malam ini.</p>
+    <span class="eyebrow">Recommendations</span>
+    <h1 style="font-size:clamp(1.8rem,4.5vw,3rem)" data-i18n="movies_title">12 Must-Watch Movies for Weekend Marathon</h1>
+    <p style="margin-bottom:0" data-i18n="movies_desc">From action blockbusters to touching dramas — pick your mood.</p>
   </div>
 </header>
 
 <main class="section" style="padding-top:30px">
   <div class="container">
-    <!-- CONTAINER FILM DARI TMDB (Dinamis jika API Key diisi) -->
+    <!-- CONTAINER FILM TMDB (Dinamis) -->
     <div id="tmdbContainer" class="grid grid-4" style="display: none;"></div>
 
-    <!-- FALLBACK STATIS (Tampil default jika API Key belum diisi) -->
+    <!-- FALLBACK STATIS -->
     <div id="fallbackMovies" class="grid grid-4">
-
       <div class="movie-card"><div class="poster"><span class="rank">#1</span><div class="meta">Dune: Part Two</div></div>
-        <div class="body"><span class="genre">Sci-Fi · Petualangan</span><h3>Dune: Part Two</h3><p>Epos gurun yang memukau dengan visual sinematik kelas atas dan cerita yang mendalam.</p></div></div>
+        <div class="body"><span class="genre">Sci-Fi · Adventure</span><h3>Dune: Part Two</h3><p>A cinematic desert epic with stunning visuals and deep storytelling.</p></div></div>
 
       <div class="movie-card"><div class="poster"><span class="rank">#2</span><div class="meta">Oppenheimer</div></div>
-        <div class="body"><span class="genre">Biografi · Drama</span><h3>Oppenheimer</h3><p>Kisah ayah bom atom yang mengubah sejarah dunia. Penuh ketegangan dan dialog tajam.</p></div></div>
+        <div class="body"><span class="genre">Biography · Drama</span><h3>Oppenheimer</h3><p>The story of the father of the atomic bomb. Tense and masterfully crafted.</p></div></div>
 
       <div class="movie-card"><div class="poster"><span class="rank">#3</span><div class="meta">Spider-Verse</div></div>
-        <div class="body"><span class="genre">Animasi · Aksi</span><h3>Across the Spider-Verse</h3><p>Animasi revolusioner dengan gaya visual unik dan cerita multiverse yang seru.</p></div></div>
+        <div class="body"><span class="genre">Animation · Action</span><h3>Across the Spider-Verse</h3><p>Revolutionary animation style and thrilling multiverse action.</p></div></div>
 
       <div class="movie-card"><div class="poster"><span class="rank">#4</span><div class="meta">John Wick 4</div></div>
-        <div class="body"><span class="genre">Aksi · Kejar-kejaran</span><h3>John Wick: Chapter 4</h3><p>Choreografi aksi terbaik dalam franchise, penuh pertarungan epik tanpa henti.</p></div></div>
+        <div class="body"><span class="genre">Action · Thriller</span><h3>John Wick: Chapter 4</h3><p>Peak action choreography with non-stop thrilling set pieces.</p></div></div>
 
-      <div class="movie-card"><div class="poster"><span class="rank">#5</span><div class="meta">Interstellar</div></div>
-        <div class="body"><span class="genre">Sci-Fi · Drama</span><h3>Interstellar</h3><p>Perjalanan antariksa yang menyentuh soal cinta, waktu, dan kelangsungan umat manusia.</p></div></div>
-
-      <div class="movie-card"><div class="poster"><span class="rank">#6</span><div class="meta">Parasite</div></div>
-        <div class="body"><span class="genre">Thriller · Drama</span><h3>Parasite</h3><p>Thriller satir yang cerdas dengan balikan plot tak terduga. Pemenang Oscar.</p></div></div>
-
-      <div class="movie-card"><div class="poster"><span class="rank">#7</span><div class="meta">Top Gun 2</div></div>
-        <div class="body"><span class="genre">Aksi · Petualangan</span><h3>Top Gun: Maverick</h3><p>Aksi pesawat tempur memukau dan nostalgia yang memuaskan penonton semua umur.</p></div></div>
-
-      <div class="movie-card"><div class="poster"><span class="rank">#8</span><div class="meta">Everything Everywhere</div></div>
-        <div class="body"><span class="genre">Aksi · Komedi</span><h3>Everything Everywhere All at Once</h3><p>Kacau, kreatif, dan emosional — petualangan multiverse yang tak terlupakan.</p></div></div>
-
-      <!-- CTA INLINE A -->
+      <!-- INLINE CTA -->
       <div class="movie-card" style="grid-column:1/-1">
         <div class="inline-cta" style="margin:0">
-          <p>...</p>
-          <a href="#" data-offer data-offer-label class="btn btn-primary">🎬 Klaim Rekomendasi Personal</a>
+          <p>Looking for more personalized movie recommendations?</p>
+          <a href="#" data-offer class="btn btn-primary">🎬 Claim Personal Recommendations</a>
         </div>
       </div>
 
-      <div class="movie-card"><div class="poster"><span class="rank">#9</span><div class="meta">The Batman</div></div>
-        <div class="body"><span class="genre">Aksi · Detektif</span><h3>The Batman</h3><p>Versi gelap dan detektif dari Batman, penuh suasana noir yang menegangkan.</p></div></div>
+      <div class="movie-card"><div class="poster"><span class="rank">#5</span><div class="meta">Interstellar</div></div>
+        <div class="body"><span class="genre">Sci-Fi · Drama</span><h3>Interstellar</h3><p>An emotional journey through space, time, and humanity.</p></div></div>
 
-      <div class="movie-card"><div class="poster"><span class="rank">#10</span><div class="meta">Knives Out</div></div>
-        <div class="body"><span class="genre">Misteri · Komedi</span><h3>Knives Out</span><p>Misteri pembunuhan yang cerdas dan menghibur dengan dialog yang tajam.</p></div></div>
+      <div class="movie-card"><div class="poster"><span class="rank">#6</span><div class="meta">Parasite</div></div>
+        <div class="body"><span class="genre">Thriller · Drama</span><h3>Parasite</h3><p>A brilliant satirical thriller with unexpected twists. Oscar winner.</p></div></div>
 
-      <div class="movie-card"><div class="poster"><span class="rank">#11</span><div class="meta">Mad Max Fury Road</div></div>
-        <div class="body"><span class="genre">Aksi · Pasca-Apokaliptik</span><h3>Mad Max: Fury Road</h3><p>Kejar-kejaran gurun non-stop dengan aksi praktis yang mendebarkan.</p></div></div>
+      <div class="movie-card"><div class="poster"><span class="rank">#7</span><div class="meta">Top Gun 2</div></div>
+        <div class="body"><span class="genre">Action · Adventure</span><h3>Top Gun: Maverick</h3><p>Breathtaking aerial action and emotional nostalgia.</p></div></div>
 
-      <div class="movie-card"><div class="poster"><span class="rank">#12</span><div class="meta">Grand Budapest</div></div>
-        <div class="body"><span class="genre">Komedi · Petualangan</span><h3>The Grand Budapest Hotel</h3><p>Karya Wes Anderson yang stylish, lucu, dan penuh warna sinematik khas.</p></div></div>
-
+      <div class="movie-card"><div class="poster"><span class="rank">#8</span><div class="meta">Everything Everywhere</div></div>
+        <div class="body"><span class="genre">Action · Sci-Fi</span><h3>Everything Everywhere All at Once</h3><p>A chaotic, wildly creative, and touching multiverse ride.</p></div></div>
     </div>
 
     <!-- CTA BAND -->
     <div class="cta-band" style="margin-top:44px">
-      <h2>Mana yang Akan Kamu Tonton Malam Ini?</h2>
-      <p>Bingung memilih? Ikuti quiz kami untuk mendapatkan rekomendasi yang paling cocok dengan seleramu.</p>
-      <a href="quiz.html" class="btn btn-gold btn-lg btn-pulse">▶ Dapatkan Rekomendasi via Quiz</a>
-    </div>
-
-    <!-- SEO: FAQ schema-style -->
-    <div class="faq" style="margin-top:56px">
-      <div class="section-head"><span class="tag">FAQ</span><h2>Pertanyaan Seputar Rekomendasi Film</h2></div>
-      <details class="faq-item"><summary>Film mana yang paling cocok untuk tonton keluarga?</summary><div class="a">Top Gun: Maverick dan Spider-Verse cocok untuk penonton segala usia dengan aksi seru tanpa adegan berat.</div></details>
-      <details class="faq-item"><summary>Ada film aksi tanpa kekerasan berlebihan?</summary><div class="a">The Grand Budapest Hotel dan Knives Out menawarkan ketegangan dengan pendekatan ringan dan cerdas.</div></details>
-      <details class="faq-item"><summary>Bagaimana cara memilih film sesuai mood?</summary><div class="a">Mood penasaran → Parasite. Butuh hiburan ringan → Grand Budapest. Ingin kagum → Dune atau Interstellar.</div></details>
+      <h2>Which One Will You Watch Tonight?</h2>
+      <p>Can't decide? Take our quiz to find the perfect movie for your taste.</p>
+      <a href="quiz.html" class="btn btn-gold btn-lg btn-pulse">▶ Get Recommendations via Quiz</a>
     </div>
   </div>
 </main>
@@ -111,21 +86,18 @@
   <div class="container">
     <div class="footer-bottom" style="border:0;padding-top:0">
       © 2026 CineVault · <a href="disclaimer.html">Disclaimer</a> · <a href="privacy.html">Privacy</a>
-      <div class="disc">Semua judul film adalah milik studio masing-masing. Situs ini hanya memberikan rekomendasi.</div>
+      <div class="disc" data-i18n="footer_disc">Some links on this site are partner/affiliate links.</div>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/config.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/offer.js"></script>
 <script src="assets/js/tmdb.js"></script>
 <script>
-  document.getElementById('burger').addEventListener('click',function(){
+  document.getElementById('burger').addEventListener('click', function() {
     document.getElementById('navLinks').classList.toggle('open');
-  });
-  document.querySelectorAll('[data-offer]').forEach(function(el){
-    el.setAttribute('href',(window.CPACONFIG&&window.CPACONFIG.OFFER_URL)||'#');
-    if(el.hasAttribute('data-offer-label')&&window.CPACONFIG&&window.CPACONFIG.OFFER_LABEL)
-      el.textContent=window.CPACONFIG.OFFER_LABEL;
   });
 </script>
 <style>.active{color:#fff!important}</style>

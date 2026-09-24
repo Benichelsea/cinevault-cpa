@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CineVault — Quiz Film & Rekomendasi Movie Terbaik</title>
-  <meta name="description" content="Uji pengetahuan film kamu dengan quiz interaktif 10 soal, dan temukan rekomendasi movie terbaik. Gratis, cepat, tanpa daftar.">
+  <title>CineVault — Movie Quiz & Best Film Recommendations</title>
+  <meta name="description" content="Test your movie knowledge with our 10-question quiz and discover the best film recommendations. Free, fast, no registration.">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://cinevault.example/">
+  <link rel="canonical" href="https://benichelsea.github.io/cinevault-cpa/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="CineVault — Quiz Film & Rekomendasi Movie Terbaik">
-  <meta property="og:description" content="Uji pengetahuan film kamu dan lihat hasil cinephile-mu.">
-  <meta property="og:url" content="https://cinevault.example/">
+  <meta property="og:title" content="CineVault — Movie Quiz & Best Film Recommendations">
+  <meta property="og:description" content="Test your movie knowledge and discover your cinephile title instantly.">
+  <meta property="og:url" content="https://benichelsea.github.io/cinevault-cpa/">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -19,11 +20,11 @@
   <div class="container nav-inner">
     <a href="index.html" class="logo">Cine<span>Vault</span></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="quiz.html">Quiz</a></li>
-      <li><a href="movies.html">Movies</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="quiz.html" class="nav-cta">Main Quiz</a></li>
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="quiz.html" data-i18n="nav_quiz">Quiz</a></li>
+      <li><a href="movies.html" data-i18n="nav_movies">Movies</a></li>
+      <li><a href="about.html" data-i18n="nav_about">About</a></li>
+      <li><a href="quiz.html" class="nav-cta" data-i18n="nav_play">Play Quiz</a></li>
     </ul>
     <button class="burger" id="burger" aria-label="Menu">☰</button>
   </div>
@@ -32,12 +33,12 @@
 <!-- HERO -->
 <header class="hero">
   <div class="container">
-    <span class="eyebrow">Gratis · Tanpa Daftar · Hasil Instan</span>
-    <h1>Seberapa <em>Cinephile</em>-kah Kamu?<br>Uji dengan Quiz 10 Detik</h1>
-    <p>Jawab 10 pertanyaan trivia film, dapatkan skor dan gelar cinephile kamu secara instan. Lalu jelajahi rekomendasi movie terbaik untuk maraton akhir pekan.</p>
+    <span class="eyebrow" data-i18n="hero_eyebrow">Free · No Registration · Instant Results</span>
+    <h1 data-i18n="hero_title">How <em>Cinephile</em> Are You?<br>Test in 10 Seconds</h1>
+    <p data-i18n="hero_desc">Answer 10 movie trivia questions, get your instant score and cinephile title.</p>
     <div class="hero-cta">
-      <a href="quiz.html" class="btn btn-primary btn-lg btn-pulse">🎬 Mulai Quiz Sekarang</a>
-      <a href="movies.html" class="btn btn-ghost btn-lg">Lihat Rekomendasi</a>
+      <a href="quiz.html" class="btn btn-primary btn-lg btn-pulse" data-i18n="hero_cta_quiz">🎬 Start Quiz Now</a>
+      <a href="movies.html" class="btn btn-ghost btn-lg" data-i18n="hero_cta_movies">See Recommendations</a>
     </div>
   </div>
 </header>
@@ -46,10 +47,10 @@
 <section class="section" style="padding-top:0">
   <div class="container">
     <div class="stats">
-      <div class="stat"><div class="n">10</div><div class="l">Soal Trivia</div></div>
-      <div class="stat"><div class="n">100+</div><div class="l">Film Dibahas</div></div>
-      <div class="stat"><div class="n">5</div><div class="l">Gelar Cinephile</div></div>
-      <div class="stat"><div class="n">0</div><div class="l">Iklan Mengganggu</div></div>
+      <div class="stat"><div class="n">10</div><div class="l" data-i18n="stat_trivia">Trivia Questions</div></div>
+      <div class="stat"><div class="n">100+</div><div class="l" data-i18n="stat_movies">Movies Covered</div></div>
+      <div class="stat"><div class="n">5</div><div class="l" data-i18n="stat_titles">Cinephile Titles</div></div>
+      <div class="stat"><div class="n">0</div><div class="l" data-i18n="stat_ads">Annoying Ads</div></div>
     </div>
   </div>
 </section>
@@ -58,14 +59,14 @@
 <section class="section section-alt">
   <div class="container">
     <div class="section-head">
-      <span class="tag">Cara Kerja</span>
-      <h2>Tiga Langkah Menuju Gelar Cinephile</h2>
-      <p>Tanpa instal aplikasi, tanpa membuat akun. Semuanya jalan langsung di browser kamu.</p>
+      <span class="tag">How It Works</span>
+      <h2 data-i18n="how_title">Three Steps to Your Cinephile Title</h2>
+      <p data-i18n="how_desc">No app install required. Everything runs right in your browser.</p>
     </div>
     <div class="grid grid-3">
-      <div class="card"><div class="step-n">1</div><h3>Jawab 10 Soal</h3><p>Pertanyaan trivia film dari sutradara, aktor, hingga adegan ikonik. Setiap jawaban benar menambah skor.</p></div>
-      <div class="card"><div class="step-n">2</div><h3>Dapatkan Hasilmu</h3><p>Skor dan gelar cinephile muncul langsung — dari Couch Potato sampai Cinephile Legend.</p></div>
-      <div class="card"><div class="step-n">3</div><h3>Bagikan & Tantang</h3><p>Bagikan hasil ke teman, tantang mereka mengalahkan skormu, dan jelajahi rekomendasi film di bawah.</p></div>
+      <div class="card"><div class="step-n">1</div><h3 data-i18n="step1_t">Answer 10 Questions</h3><p data-i18n="step1_d">Movie trivia on directors, actors, and iconic scenes.</p></div>
+      <div class="card"><div class="step-n">2</div><h3 data-i18n="step2_t">Get Your Result</h3><p data-i18n="step2_d">Score and cinephile title appear instantly.</p></div>
+      <div class="card"><div class="step-n">3</div><h3 data-i18n="step3_t">Share & Challenge</h3><p data-i18n="step3_d">Share your results with friends and challenge them.</p></div>
     </div>
   </div>
 </section>
@@ -74,13 +75,13 @@
 <section class="section">
   <div class="container">
     <div class="section-head">
-      <span class="tag">Kenapa CineVault</span>
-      <h2>Dibuat untuk Pecinta Film Sejati</h2>
+      <span class="tag">Why CineVault</span>
+      <h2 data-i18n="feat_title">Built for True Movie Lovers</h2>
     </div>
     <div class="grid grid-3">
-      <div class="card"><div class="ic">⚡</div><h3>Hasil Instan</h3><p>Tidak perlu menunggu. Skor dihitung real-time saat kamu menjawab tiap soal.</p></div>
-      <div class="card"><div class="ic">🎞️</div><h3>Konten Segar</h3><p>Rekomendasi film diperbarui rutin, dari rilisan klasik hingga blockbuster terbaru.</p></div>
-      <div class="card"><div class="ic">🔒</div><h3>Privasi Aman</h3><p>Tidak ada pendaftaran, tidak ada data pribadi yang dikumpulkan saat bermain quiz.</p></div>
+      <div class="card"><div class="ic">⚡</div><h3 data-i18n="feat1_t">Instant Results</h3><p data-i18n="feat1_d">No waiting. Scores calculated in real-time.</p></div>
+      <div class="card"><div class="ic">🎞️</div><h3 data-i18n="feat2_t">Fresh Content</h3><p data-i18n="feat2_d">Movie recommendations updated regularly.</p></div>
+      <div class="card"><div class="ic">🔒</div><h3 data-i18n="feat3_t">Privacy Safe</h3><p data-i18n="feat3_d">No registration, no personal data collected.</p></div>
     </div>
   </div>
 </section>
@@ -89,9 +90,9 @@
 <section class="section section-alt">
   <div class="container">
     <div class="cta-band">
-      <h2>Sudah Siap Mengungkap Gelarmu?</h2>
-      <p>Lebih dari 500 kombinasi trivia film menunggu. Mulai sekarang dan lihat apakah kamu layak disebut Cinephile Legend.</p>
-      <a href="quiz.html" class="btn btn-gold btn-lg btn-pulse">▶ Mulai Quiz Gratis</a>
+      <h2 data-i18n="cta_band_t">Ready to Reveal Your Cinephile Level?</h2>
+      <p data-i18n="cta_band_d">Over 500 movie trivia combinations waiting. Start now!</p>
+      <a href="quiz.html" class="btn btn-gold btn-lg btn-pulse" data-i18n="cta_band_btn">▶ Start Free Quiz</a>
     </div>
   </div>
 </section>
@@ -101,55 +102,64 @@
   <div class="container">
     <div class="section-head">
       <span class="tag">FAQ</span>
-      <h2>Pertanyaan Umum</h2>
+      <h2 data-i18n="faq_t">Frequently Asked Questions</h2>
     </div>
     <div class="faq">
-      <details class="faq-item" open><summary>Apakah quiz ini benar-benar gratis?</summary><div class="a">Ya. Seluruh quiz dan rekomendasi film bisa diakses gratis tanpa biaya tersembunyi.</div></details>
-      <details class="faq-item"><summary>Perlu membuat akun?</summary><div class="a">Tidak. Kamu bisa langsung bermain tanpa mendaftar atau memberikan email.</div></details>
-      <details class="faq-item"><summary>Bagaimana cara mendapatkan hasil tertinggi?</summary><div class="a">Pelajari fakta film ikonik — sutradara, aktor utama, dan adegan klasik. Rekomendasi di halaman Movies bisa jadi bahan belajar.</div></details>
-      <details class="faq-item"><summary>Apakah bisa dimainkan di HP?</summary><div class="a">Tentu. Seluruh halaman responsif dan optimal untuk layar ponsel.</div></details>
+      <details class="faq-item" open>
+        <summary data-i18n="faq1_q">Is this quiz really free?</summary>
+        <div class="a" data-i18n="faq1_a">Yes, 100% free with no hidden fees.</div>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq2_q">Do I need an account?</summary>
+        <div class="a" data-i18n="faq2_a">No registration required. Play instantly.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How to get the highest score?</summary>
+        <div class="a">Study iconic film facts — directors, lead actors, and classic scenes. The Movies page has great material.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Works on mobile?</summary>
+        <div class="a">Yes, fully responsive and optimized for all screen sizes.</div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <a href="index.html" class="logo">Cine<span>Vault</span></a>
-        <p style="color:var(--muted);font-size:.92rem;margin-top:12px">Quiz film & rekomendasi movie untuk pecinta bioskop. Uji pengetahuan, kumpulkan gelar, jelajahi sinema.</p>
+        <p style="color:var(--muted);font-size:.92rem;margin-top:12px">Movie quiz & recommendations for cinema lovers worldwide. Test your knowledge, earn your title, explore cinema.</p>
       </div>
-      <div><h4>Navigasi</h4><ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="quiz.html">Quiz</a></li>
-        <li><a href="movies.html">Movies</a></li>
-        <li><a href="about.html">About</a></li>
+      <div><h4>Navigate</h4><ul>
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="quiz.html" data-i18n="nav_quiz">Quiz</a></li>
+        <li><a href="movies.html" data-i18n="nav_movies">Movies</a></li>
+        <li><a href="about.html" data-i18n="nav_about">About</a></li>
       </ul></div>
       <div><h4>Legal</h4><ul>
         <li><a href="disclaimer.html">Disclaimer</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
       </ul></div>
-      <div><h4>Ikuti</h4><ul>
-        <li><a href="quiz.html">Mulai Quiz</a></li>
-        <li><a href="movies.html">Rekomendasi</a></li>
+      <div><h4>More</h4><ul>
+        <li><a href="quiz.html" data-i18n="nav_play">Play Quiz</a></li>
+        <li><a href="movies.html" data-i18n="nav_movies">Movies</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">
-      © 2026 CineVault. Semua merek film adalah milik pemiliknya masing-masing.
-      <div class="disc">Sebagian tautan di situs ini adalah tautan afiliasi. Lihat <a href="disclaimer.html">Disclaimer</a>.</div>
+      © 2026 CineVault. All movie titles and trademarks belong to their respective owners.
+      <div class="disc" data-i18n="footer_disc">Some links on this site are partner/affiliate links. See our <a href="disclaimer.html">Disclaimer</a>.</div>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/config.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/offer.js"></script>
 <script>
-  document.getElementById('burger').addEventListener('click',function(){
+  document.getElementById('burger').addEventListener('click', function() {
     document.getElementById('navLinks').classList.toggle('open');
-  });
-  // rekonsiliasi semua tautan offer
-  document.querySelectorAll('[data-offer]').forEach(function(el){
-    el.setAttribute('href', (window.CPACONFIG&&window.CPACONFIG.OFFER_URL)||'#');
   });
 </script>
 </body>
